@@ -3,41 +3,44 @@
 <head>
   <meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Sign Up Free – Researchium</title>
+  
+  <script src="https://accounts.google.com/gsi/client" async defer></script>
+
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="../css/style.css"/>
   <style>
-    body{min-height:100vh;display:flex}
+    /* ... (Keeping your existing styles) ... */
+    body{min-height:100vh;display:flex;margin:0;background:var(--navy)}
     .auth-wrap{display:flex;width:100%;min-height:100vh}
     .auth-left{flex:1;background:linear-gradient(145deg,var(--navy-2),var(--navy-3));display:flex;align-items:center;justify-content:center;padding:60px;position:relative;overflow:hidden}
     .auth-left::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 40% 60%,rgba(201,168,76,0.07),transparent 60%)}
     .auth-left-inner{position:relative;z-index:1;max-width:440px}
-    .auth-left .logo{font-family:var(--fh);font-size:28px;font-weight:700;margin-bottom:48px;display:flex;align-items:center;gap:8px}
-    .auth-left h2{font-family:var(--fh);font-size:36px;font-weight:900;margin-bottom:16px;line-height:1.15}
+    .auth-left .logo{font-family:var(--fh);font-size:28px;font-weight:700;margin-bottom:48px;display:flex;align-items:center;gap:8px;text-decoration:none;color:var(--white)}
+    .logo-gold{color:var(--gold)}
+    .auth-left h2{font-family:var(--fh);font-size:36px;font-weight:900;margin-bottom:16px;line-height:1.15;color:var(--white)}
     .auth-left p{color:var(--muted);font-size:15px;line-height:1.7;margin-bottom:36px}
     .stat-row{display:flex;gap:32px;flex-wrap:wrap}
     .auth-stat strong{display:block;font-family:var(--fh);font-size:32px;font-weight:900;color:var(--gold)}
     .auth-stat span{font-size:12px;color:var(--muted)}
     .auth-right{flex:1;display:flex;align-items:center;justify-content:center;padding:60px;background:var(--navy);overflow-y:auto}
-    .auth-box{width:100%;max-width:440px}
+    .auth-box{width:100%;max-width:440px;color:var(--white)}
     .auth-box h3{font-family:var(--fh);font-size:28px;font-weight:800;margin-bottom:8px}
     .auth-box .sub{color:var(--muted);font-size:15px;margin-bottom:28px}
-    .soc-btn{display:flex;align-items:center;justify-content:center;gap:12px;padding:13px;border:1px solid rgba(201,168,76,0.15);border-radius:var(--r-sm);background:rgba(255,255,255,0.03);font-size:14px;font-weight:600;cursor:pointer;transition:var(--tr);color:var(--white);font-family:var(--fb);width:100%;margin-bottom:12px}
-    .soc-btn:hover{border-color:var(--gold-border)}
+    
+    /* Google Button Styling */
+    .g-btn-wrapper { margin-bottom: 20px; width: 100%; display: flex; justify-content: center; }
+    
     .or-divider{text-align:center;color:rgba(232,238,246,0.25);font-size:12px;margin:16px 0;position:relative}
-    .or-divider::before,.or-divider::after{content:'';position:absolute;top:50%;width:44%;height:1px;background:rgba(255,255,255,0.07)}
+    .or-divider::before,.or-divider::after{content:'';position:absolute;top:50%;width:40%;height:1px;background:rgba(255,255,255,0.07)}
     .or-divider::before{left:0}.or-divider::after{right:0}
     .form-grp{margin-bottom:16px}
     .form-grp label{display:block;font-size:11px;font-weight:700;color:rgba(232,238,246,0.5);letter-spacing:0.5px;text-transform:uppercase;margin-bottom:7px}
-    .form-grp input,.form-grp select{width:100%;padding:12px 16px;background:rgba(255,255,255,0.05);border:1px solid rgba(201,168,76,0.12);border-radius:var(--r-sm);color:var(--white);font-family:var(--fb);font-size:14px;outline:none;transition:var(--tr)}
-    .form-grp input:focus,.form-grp select:focus{border-color:var(--gold)}
-    .form-grp input::placeholder{color:rgba(232,238,246,0.22)}
-    .form-grp select option{background:var(--navy-2)}
+    .form-grp input,.form-grp select{width:100%;padding:12px 16px;background:rgba(255,255,255,0.05);border:1px solid rgba(201,168,76,0.12);border-radius:var(--r-sm);color:var(--white);font-family:var(--fb);font-size:14px;outline:none;box-sizing: border-box;}
     .two-col{display:grid;grid-template-columns:1fr 1fr;gap:14px}
-    .terms-txt{font-size:11px;color:rgba(232,238,246,0.3);text-align:center;margin-top:12px;line-height:1.5}
-    .terms-txt a{color:var(--gold)}
-    .auth-switch{text-align:center;font-size:14px;color:var(--muted);margin-top:18px}
-    .auth-switch a{color:var(--gold);font-weight:700}
+    .btn-gold{background:var(--gold);color:var(--navy);border:none;font-weight:700;cursor:pointer;transition: 0.3s;}
+    .btn-gold:hover{transform: translateY(-2px); filter: brightness(1.1);}
+    .auth-switch a{color:var(--gold);text-decoration:none}
     @media(max-width:768px){.auth-left{display:none}.auth-right{padding:40px 22px}}
   </style>
 </head>
@@ -47,7 +50,7 @@
     <div class="auth-left-inner">
       <a href="../index.html" class="logo"><span class="logo-icon">⬡</span>Research<span class="logo-gold">ium</span></a>
       <h2>Start Your Path to Academic Excellence</h2>
-      <p>Create your free Researchium account and get instant access to 250+ free courses, live classes, and 4.8 million co-learners.</p>
+      <p>Create your free Researchium account and get instant access to 250+ free courses and live classes.</p>
       <div class="stat-row">
         <div class="auth-stat"><strong>4.8M+</strong><span>Active Students</span></div>
         <div class="auth-stat"><strong>3,200+</strong><span>Courses</span></div>
@@ -59,38 +62,58 @@
     <div class="auth-box">
       <h3>Create Free Account 🎓</h3>
       <p class="sub">Join millions achieving their dreams with Researchium</p>
-      <button class="soc-btn">🔵 Sign up with Google</button>
+      
+      <div id="g_id_onload"
+           data-client_id="YOUR_GOOGLE_CLIENT_ID.apps.googleusercontent.com"
+           data-callback="handleCredentialResponse">
+      </div>
+      <div class="g_id_signin" data-type="standard" data-theme="filled_blue" data-size="large" data-width="440"></div>
+
       <div class="or-divider">or fill in your details</div>
-      <form onsubmit="return false">
+
+      <form id="signup-form">
         <div class="two-col">
-          <div class="form-grp"><label>First Name</label><input type="text" placeholder="Rahul"/></div>
-          <div class="form-grp"><label>Last Name</label><input type="text" placeholder="Sharma"/></div>
+          <div class="form-grp"><label>First Name</label><input type="text" placeholder="Rahul" required/></div>
+          <div class="form-grp"><label>Last Name</label><input type="text" placeholder="Sharma" required/></div>
         </div>
-        <div class="form-grp"><label>Email Address</label><input type="email" placeholder="you@example.com"/></div>
+        <div class="form-grp"><label>Email Address</label><input type="email" placeholder="you@example.com" required/></div>
         <div class="form-grp"><label>Mobile Number</label><input type="tel" placeholder="+91 98765 43210"/></div>
         <div class="form-grp">
           <label>I'm Preparing For</label>
-          <select>
+          <select required>
             <option value="">Select your goal…</option>
-            <option>JEE Advanced / JEE Mains</option>
-            <option>NEET UG / PG</option>
-            <option>UPSC Civil Services</option>
-            <option>SSC / Government Jobs</option>
+            <option>Class 10 Board Exams</option>
+            <option>Class 12 Board Exams</option>
+            <option>B.Sc Mathematics / CS</option>
             <option>Coding & Tech Placements</option>
-            <option>MBA / CAT / GMAT</option>
-            <option>Banking & Finance</option>
-            <option>K-12 School Studies</option>
-            <option>Research & Academic Writing</option>
-            <option>Professional Skill Development</option>
           </select>
         </div>
-        <div class="form-grp"><label>Create Password</label><input type="password" placeholder="Min. 8 characters"/></div>
+        <div class="form-grp"><label>Create Password</label><input type="password" placeholder="Min. 8 characters" required/></div>
         <button type="submit" class="btn-gold" style="width:100%;padding:15px;font-size:15px;border-radius:50px;margin-top:6px">Create My Free Account →</button>
       </form>
-      <div class="terms-txt">By signing up you agree to Researchium's <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a></div>
+
       <div class="auth-switch">Already have an account? <a href="login.html">Sign in</a></div>
     </div>
   </div>
 </div>
+
+<script>
+  // Function to handle the Google Sign-In Response
+  function handleCredentialResponse(response) {
+     // This "credential" is a JWT token containing user info (email, name, photo)
+     console.log("Encoded JWT ID token: " + response.credential);
+     
+     // In a real app, you would send this token to your backend to verify and log the user in
+     alert("Google Sign-up successful! Redirecting to dashboard...");
+     window.location.href = "dashboard.html"; 
+  }
+
+  // Handle manual form submission
+  document.getElementById('signup-form').addEventListener('submit', function(e) {
+    e.preventDefault();
+    alert("Form submitted! Welcome to Researchium.");
+  });
+</script>
+
 </body>
 </html>
