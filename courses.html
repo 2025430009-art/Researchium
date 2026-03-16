@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>All Courses – Researchium</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="../css/style.css"/>
+  <style>
+    .page-hero{padding:110px 28px 56px;background:var(--navy-2);border-bottom:1px solid rgba(201,168,76,0.08);text-align:center}
+    .page-hero h1{font-family:var(--fh);font-size:clamp(28px,5vw,52px);font-weight:900;margin-bottom:12px}
+    .page-hero p{color:var(--muted);font-size:16px;margin-bottom:28px}
+    .search-wrap{max-width:580px;margin:0 auto;display:flex;gap:0}
+    .search-wrap input{flex:1;padding:15px 20px;background:rgba(255,255,255,0.06);border:1px solid rgba(201,168,76,0.2);border-right:none;border-radius:50px 0 0 50px;color:var(--white);font-family:var(--fb);font-size:15px;outline:none}
+    .search-wrap input:focus{border-color:var(--gold)}
+    .search-wrap input::placeholder{color:var(--muted)}
+    .search-wrap .btn-gold{border-radius:0 50px 50px 0;padding:15px 24px}
+    .courses-layout{display:grid;grid-template-columns:260px 1fr;gap:36px;align-items:start}
+    .filter-panel{background:var(--navy-3);border:1px solid rgba(255,255,255,0.06);border-radius:var(--r);padding:28px;position:sticky;top:88px}
+    .filter-panel h3{font-family:var(--fh);font-size:18px;font-weight:700;margin-bottom:24px;color:var(--gold)}
+    .fg{margin-bottom:22px;padding-bottom:18px;border-bottom:1px solid rgba(255,255,255,0.05)}
+    .fg:last-child{border:none;margin:0;padding:0}
+    .fg h4{font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--gold);margin-bottom:12px}
+    .fg label{display:flex;align-items:center;gap:10px;font-size:13px;color:var(--muted);cursor:pointer;padding:5px 0;transition:var(--tr)}
+    .fg label:hover{color:var(--white)}
+    .fg input[type=checkbox]{accent-color:var(--gold);width:14px;height:14px}
+    .toolbar{display:flex;align-items:center;justify-content:space-between;margin-bottom:24px}
+    .results-label{font-size:13px;color:var(--muted)}
+    .sort-sel{background:var(--navy-4);border:1px solid rgba(201,168,76,0.2);color:var(--white);padding:8px 14px;border-radius:8px;font-family:var(--fb);font-size:13px;cursor:pointer;outline:none}
+    .pagination{display:flex;gap:8px;justify-content:center;margin-top:40px}
+    .pag-btn{width:40px;height:40px;border-radius:8px;background:var(--navy-4);border:1px solid rgba(255,255,255,0.08);color:var(--white);cursor:pointer;font-family:var(--fh);font-weight:700;transition:var(--tr)}
+    .pag-btn:hover,.pag-btn.active{background:var(--gold);color:var(--navy);border-color:var(--gold)}
+    @media(max-width:768px){.courses-layout{grid-template-columns:1fr}.filter-panel{position:static}}
+  </style>
+</head>
+<body>
+<nav class="navbar" id="navbar">
+  <div class="nav-inner">
+    <a href="../index.html" class="logo"><span class="logo-icon">⬡</span>Research<span class="logo-gold">ium</span></a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="courses.html" class="nav-active">Courses</a></li>
+      <li><a href="live.html">Live Classes</a></li>
+      <li><a href="blog.html">Research Blog</a></li>
+      <li><a href="pricing.html">Pricing</a></li>
+      <li><a href="about.html">About</a></li>
+    </ul>
+    <div class="nav-actions">
+      <a href="login.html" class="btn-ghost">Sign In</a>
+      <a href="signup.html" class="btn-gold">Start Free →</a>
+    </div>
+    <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<div class="page-hero">
+  <div class="sec-tag">3,200+ COURSES AVAILABLE</div>
+  <h1>Explore All <span class="gold">Researchium</span> Courses</h1>
+  <p>From JEE to FAANG — find your perfect learning path and start today</p>
+  <div class="search-wrap">
+    <input type="text" id="searchBox" placeholder="Search courses, topics, educators..."/>
+    <button class="btn-gold">🔍</button>
+  </div>
+</div>
+
+<section class="section" style="padding-top:48px">
+  <div class="container">
+    <div class="courses-layout">
+      <aside class="filter-panel">
+        <h3>Filter Courses</h3>
+        <div class="fg">
+          <h4>Category</h4>
+          <label><input type="checkbox" class="filter-cb" checked/> JEE / NEET</label>
+          <label><input type="checkbox" class="filter-cb"/> UPSC / SSC</label>
+          <label><input type="checkbox" class="filter-cb"/> Coding & AI</label>
+          <label><input type="checkbox" class="filter-cb"/> Research & Science</label>
+          <label><input type="checkbox" class="filter-cb"/> Finance & MBA</label>
+          <label><input type="checkbox" class="filter-cb"/> K-12 Schools</label>
+          <label><input type="checkbox" class="filter-cb"/> Design & UX</label>
+        </div>
+        <div class="fg">
+          <h4>Level</h4>
+          <label><input type="checkbox" checked/> Beginner</label>
+          <label><input type="checkbox" checked/> Intermediate</label>
+          <label><input type="checkbox" checked/> Advanced</label>
+        </div>
+        <div class="fg">
+          <h4>Price</h4>
+          <label><input type="checkbox" checked/> Free</label>
+          <label><input type="checkbox" checked/> Under ₹999</label>
+          <label><input type="checkbox" checked/> ₹999 – ₹2,999</label>
+          <label><input type="checkbox" checked/> ₹3,000+</label>
+        </div>
+        <div class="fg">
+          <h4>Rating</h4>
+          <label><input type="checkbox"/> ⭐ 4.5 and above</label>
+          <label><input type="checkbox"/> ⭐ 4.0 and above</label>
+          <label><input type="checkbox"/> ⭐ 3.5 and above</label>
+        </div>
+        <div class="fg">
+          <h4>Language</h4>
+          <label><input type="checkbox" checked/> English</label>
+          <label><input type="checkbox" checked/> Hindi</label>
+          <label><input type="checkbox"/> Telugu</label>
+          <label><input type="checkbox"/> Tamil</label>
+        </div>
+      </aside>
+      <div>
+        <div class="toolbar">
+          <span class="results-label" id="resultsCount">Showing 12 courses</span>
+          <select class="sort-sel" id="sortSelect">
+            <option value="popular">Sort: Most Popular</option>
+            <option value="rating">Highest Rated</option>
+            <option value="newest">Newest First</option>
+            <option value="price-asc">Price: Low → High</option>
+          </select>
+        </div>
+        <div class="courses-grid" id="allCoursesGrid"></div>
+        <div class="pagination">
+          <button class="pag-btn active">1</button>
+          <button class="pag-btn">2</button>
+          <button class="pag-btn">3</button>
+          <button class="pag-btn">→</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer"><div class="footer-bottom"><p>© 2025 Researchium Learning Pvt. Ltd. · All rights reserved.</p></div></footer>
+<script src="../js/main.js"></script>
+</body>
+</html>

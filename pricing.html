@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Pricing – Researchium</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="../css/style.css"/>
+  <style>
+    .pricing-hero{padding:110px 28px 56px;text-align:center;background:var(--navy-2);border-bottom:1px solid rgba(201,168,76,0.08)}
+    .pricing-hero h1{font-family:var(--fh);font-size:clamp(28px,5vw,52px);font-weight:900;margin-bottom:12px}
+    .billing-toggle{display:flex;align-items:center;gap:16px;justify-content:center;margin:28px 0}
+    .toggle-lbl{font-size:14px;color:var(--muted);font-weight:600}
+    .toggle-lbl.on{color:var(--white)}
+    .t-switch{width:52px;height:28px;background:var(--gold);border-radius:50px;cursor:pointer;position:relative;transition:var(--tr)}
+    .t-switch::after{content:'';width:22px;height:22px;background:var(--navy);border-radius:50%;position:absolute;top:3px;left:3px;transition:var(--tr)}
+    .t-switch.annual::after{left:27px}
+    .save-pill{background:rgba(74,222,128,0.12);border:1px solid rgba(74,222,128,0.25);color:#4ade80;padding:3px 12px;border-radius:20px;font-size:11px;font-weight:700}
+    .big-plans{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;max-width:1040px;margin:0 auto}
+    .big-plan{background:var(--navy-3);border:1px solid rgba(255,255,255,0.07);border-radius:var(--r-lg);padding:40px 32px;position:relative;transition:var(--tr)}
+    .big-plan:hover{transform:translateY(-6px)}
+    .big-plan.featured{border-color:var(--gold);box-shadow:0 0 0 1px var(--gold-border),var(--glow-gold)}
+    .feat-badge{position:absolute;top:-14px;left:50%;transform:translateX(-50%);background:var(--grad-gold);color:var(--navy);padding:4px 20px;border-radius:20px;font-size:11px;font-weight:800;white-space:nowrap}
+    .plan-icon{font-size:38px;margin-bottom:14px}
+    .big-plan .plan-name{font-family:var(--fh);font-size:22px;font-weight:800;margin-bottom:8px}
+    .big-plan .plan-desc{font-size:13px;color:var(--muted);margin-bottom:20px}
+    .big-plan-price{font-family:var(--fh);font-size:50px;font-weight:900;color:var(--gold);margin-bottom:4px}
+    .big-plan-price span{font-size:16px;color:var(--muted);font-weight:400}
+    .price-note{font-size:11px;color:rgba(232,238,246,0.3);margin-bottom:28px}
+    .plan-divider{height:1px;background:rgba(255,255,255,0.06);margin:20px 0}
+    .feat-list{display:flex;flex-direction:column;gap:11px;margin-bottom:32px}
+    .feat-item{display:flex;align-items:center;gap:10px;font-size:13px}
+    .feat-item.yes{color:rgba(232,238,246,0.8)}
+    .feat-item.no{color:rgba(232,238,246,0.28)}
+    .fi-check{color:#4ade80;font-size:15px}
+    .fi-cross{color:rgba(232,238,246,0.2)}
+    .compare-table{width:100%;border-collapse:collapse;margin-top:64px}
+    .compare-table th,.compare-table td{padding:14px 18px;border-bottom:1px solid rgba(255,255,255,0.05);text-align:left;font-size:14px}
+    .compare-table th{font-family:var(--fh);font-weight:700;background:var(--navy-3);color:var(--gold)}
+    .compare-table td:first-child{color:var(--off-white);font-weight:500}
+    .compare-table td{color:var(--muted)}
+    .compare-table tr:hover td{background:rgba(255,255,255,0.02)}
+    .faq-wrap{max-width:720px;margin:64px auto 0}
+    .faq-wrap h2{font-family:var(--fh);font-size:32px;font-weight:800;text-align:center;margin-bottom:36px}
+    .faq-item{background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.07);border-radius:var(--r-sm);margin-bottom:10px;overflow:hidden;transition:var(--tr)}
+    .faq-item.open{border-color:var(--gold-border)}
+    .faq-question{padding:18px 22px;font-weight:600;font-size:15px;cursor:pointer;display:flex;justify-content:space-between;align-items:center}
+    .faq-question:hover{color:var(--gold)}
+    .faq-arrow{transition:var(--tr);color:var(--muted)}
+    .faq-item.open .faq-arrow{transform:rotate(180deg);color:var(--gold)}
+    .faq-answer{padding:0 22px 18px;font-size:14px;color:var(--muted);line-height:1.7;display:none}
+    .faq-item.open .faq-answer{display:block}
+    @media(max-width:768px){.big-plans{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+<nav class="navbar" id="navbar">
+  <div class="nav-inner">
+    <a href="../index.html" class="logo"><span class="logo-icon">⬡</span>Research<span class="logo-gold">ium</span></a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="courses.html">Courses</a></li>
+      <li><a href="live.html">Live Classes</a></li>
+      <li><a href="blog.html">Research Blog</a></li>
+      <li><a href="pricing.html" class="nav-active">Pricing</a></li>
+      <li><a href="about.html">About</a></li>
+    </ul>
+    <div class="nav-actions">
+      <a href="login.html" class="btn-ghost">Sign In</a>
+      <a href="signup.html" class="btn-gold">Start Free →</a>
+    </div>
+    <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<div class="pricing-hero">
+  <div class="sec-tag">TRANSPARENT PRICING</div>
+  <h1>Simple Plans. <span class="gold">Extraordinary</span> Results.</h1>
+  <p>Start for free. Upgrade whenever. No hidden fees. Cancel anytime.</p>
+  <div class="billing-toggle">
+    <span class="toggle-lbl on">Monthly</span>
+    <div class="t-switch" id="billingToggle"></div>
+    <span class="toggle-lbl">Annual</span>
+    <span class="save-pill">Save 40%</span>
+  </div>
+</div>
+
+<section class="section" style="padding-top:48px">
+  <div class="container">
+    <div class="big-plans">
+      <div class="big-plan">
+        <div class="plan-icon">🌱</div>
+        <div class="plan-name">Free</div>
+        <div class="plan-desc">Explore Researchium at zero cost</div>
+        <div class="big-plan-price">₹0 <span>/forever</span></div>
+        <div class="price-note">No credit card required</div>
+        <div class="plan-divider"></div>
+        <div class="feat-list">
+          <div class="feat-item yes"><span class="fi-check">✓</span>Access 250+ free courses</div>
+          <div class="feat-item yes"><span class="fi-check">✓</span>Join free live classes</div>
+          <div class="feat-item yes"><span class="fi-check">✓</span>5 mock tests per month</div>
+          <div class="feat-item yes"><span class="fi-check">✓</span>Community forum</div>
+          <div class="feat-item yes"><span class="fi-check">✓</span>Basic progress tracking</div>
+          <div class="feat-item no"><span class="fi-cross">✗</span>Offline video downloads</div>
+          <div class="feat-item no"><span class="fi-cross">✗</span>Verified certificates</div>
+          <div class="feat-item no"><span class="fi-cross">✗</span>Priority doubt support</div>
+          <div class="feat-item no"><span class="fi-cross">✗</span>1:1 mentorship</div>
+        </div>
+        <a href="signup.html" class="btn-ghost-plan">Get Started Free</a>
+      </div>
+
+      <div class="big-plan featured">
+        <div class="feat-badge">⭐ Most Popular</div>
+        <div class="plan-icon">🚀</div>
+        <div class="plan-name">Pro Scholar</div>
+        <div class="plan-desc">Everything you need to succeed</div>
+        <div class="big-plan-price" id="proPrice">₹499 <span>/month</span></div>
+        <div class="price-note" id="proNote">Billed monthly · Cancel anytime</div>
+        <div class="plan-divider"></div>
+        <div class="feat-list">
+          <div class="feat-item yes"><span class="fi-check">✓</span>All 3,200+ courses unlimited</div>
+          <div class="feat-item yes"><span class="fi-check">✓</span>All live classes included</div>
+          <div class="feat-item yes"><span class="fi-check">✓</span>Unlimited mock tests</div>
+          <div class="feat-item yes"><span class="fi-check">✓</span>Offline video downloads</div>
+          <div class="feat-item yes"><span class="fi-check">✓</span>Verified certificates</div>
+          <div class="feat-item yes"><span class="fi-check">✓</span>Priority doubt support (24h)</div>
+          <div class="feat-item yes"><span class="fi-check">✓</span>Advanced analytics</div>
+          <div class="feat-item yes"><span class="fi-check">✓</span>Ad-free experience</div>
+          <div class="feat-item no"><span class="fi-cross">✗</span>1:1 mentorship sessions</div>
+        </div>
+        <a href="signup.html" class="btn-gold btn-full-w">Start 7-Day Free Trial</a>
+        <p style="text-align:center;font-size:11px;color:rgba(232,238,246,0.3);margin-top:10px">No card required for trial</p>
+      </div>
+
+      <div class="big-plan">
+        <div class="plan-icon">💎</div>
+        <div class="plan-name">Elite Researcher</div>
+        <div class="plan-desc">For serious aspirants & professionals</div>
+        <div class="big-plan-price" id="elitePrice">₹999 <span>/month</span></div>
+        <div class="price-note" id="eliteNote">Billed monthly · Cancel anytime</div>
+        <div class="plan-divider"></div>
+        <div class="feat-list">
+          <div class="feat-item yes"><span class="fi-check">✓</span>Everything in Pro Scholar</div>
+          <div class="feat-item yes"><span class="fi-check">✓</span>4x 1:1 mentorship/month</div>
+          <div class="feat-item yes"><span class="fi-check">✓</span>Personalized study roadmap</div>
+          <div class="feat-item yes"><span class="fi-check">✓</span>Career placement assistance</div>
+          <div class="feat-item yes"><span class="fi-check">✓</span>Research paper guidance</div>
+          <div class="feat-item yes"><span class="fi-check">✓</span>Exclusive elite batches</div>
+          <div class="feat-item yes"><span class="fi-check">✓</span>Interview preparation</div>
+          <div class="feat-item yes"><span class="fi-check">✓</span>Resume & LinkedIn review</div>
+          <div class="feat-item yes"><span class="fi-check">✓</span>Alumni network access</div>
+        </div>
+        <a href="signup.html" class="btn-ghost-plan">Get Elite Access</a>
+      </div>
+    </div>
+
+    <!-- FAQ -->
+    <div class="faq-wrap">
+      <h2>Frequently Asked <span class="gold">Questions</span></h2>
+      <div class="faq-item">
+        <div class="faq-question">Can I switch or cancel my plan anytime? <span class="faq-arrow">▼</span></div>
+        <div class="faq-answer">Yes — upgrade, downgrade or cancel at any time. Changes take effect at the start of the next billing cycle. No penalties or hidden fees.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">Is there a student discount? <span class="faq-arrow">▼</span></div>
+        <div class="faq-answer">Students with a valid .edu or institutional email get 20% off Pro Scholar and Elite plans. Contact support@researchium.in to apply.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">What payment methods are accepted? <span class="faq-arrow">▼</span></div>
+        <div class="faq-answer">We accept all major credit/debit cards, UPI, Net Banking, Paytm, GPay, PhonePe, and no-cost EMI on select banks for annual plans.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">What is the refund policy? <span class="faq-arrow">▼</span></div>
+        <div class="faq-answer">We offer a 7-day money-back guarantee on all paid plans. If you're not satisfied within 7 days, email us and we'll refund 100% — no questions asked.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">Do earned certificates expire? <span class="faq-arrow">▼</span></div>
+        <div class="faq-answer">No. Certificates you earn are yours forever, even if you cancel your subscription. They are permanently linked to your Researchium profile.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">Can I buy a single course instead of a plan? <span class="faq-arrow">▼</span></div>
+        <div class="faq-answer">Yes! Individual course purchases are available for all paid courses. You get lifetime access to that course including all future updates.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer"><div class="footer-bottom"><p>© 2025 Researchium Learning Pvt. Ltd. · All rights reserved.</p></div></footer>
+<script src="../js/main.js"></script>
+</body>
+</html>

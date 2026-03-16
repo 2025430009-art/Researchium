@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Research Blog – Researchium</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="../css/style.css"/>
+  <style>
+    .blog-hero{padding:110px 28px 56px;text-align:center;background:var(--navy-2);border-bottom:1px solid rgba(201,168,76,0.08)}
+    .blog-hero h1{font-family:var(--fh);font-size:clamp(28px,5vw,52px);font-weight:900;margin-bottom:12px}
+    .blog-tags-row{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:24px}
+    .blog-tag-btn{padding:8px 18px;border-radius:50px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);font-size:13px;cursor:pointer;transition:var(--tr);color:var(--muted);font-family:var(--fb)}
+    .blog-tag-btn:hover,.blog-tag-btn.active{background:var(--gold);border-color:var(--gold);color:var(--navy);font-weight:700}
+    .blog-layout{display:grid;grid-template-columns:1fr 340px;gap:48px;align-items:start}
+    .blog-list{display:flex;flex-direction:column;gap:24px}
+    .blog-row-card{display:flex;gap:20px;background:var(--navy-3);border:1px solid rgba(255,255,255,0.06);border-radius:var(--r);overflow:hidden;transition:var(--tr);cursor:pointer}
+    .blog-row-card:hover{border-color:var(--gold-border);transform:translateX(4px)}
+    .brc-img{width:200px;flex-shrink:0;min-height:140px;display:flex;align-items:center;justify-content:center;font-size:48px}
+    .brc-body{padding:20px 20px 20px 0;flex:1}
+    .brc-cat{display:inline-block;background:var(--gold-dim);color:var(--gold);padding:3px 12px;border-radius:20px;font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-bottom:8px}
+    .brc-body h3{font-family:var(--fh);font-size:18px;font-weight:700;margin-bottom:8px;line-height:1.35}
+    .brc-body p{font-size:13px;color:var(--muted);margin-bottom:12px;line-height:1.6}
+    .brc-meta{display:flex;gap:14px;font-size:11px;color:rgba(232,238,246,0.3);flex-wrap:wrap}
+    .sidebar-widget{background:var(--navy-3);border:1px solid rgba(255,255,255,0.06);border-radius:var(--r);padding:24px;margin-bottom:22px}
+    .sidebar-widget h3{font-family:var(--fh);font-size:17px;font-weight:700;margin-bottom:18px;color:var(--gold)}
+    .pop-post{display:flex;gap:12px;padding:10px 0;border-bottom:1px solid rgba(255,255,255,0.05);align-items:flex-start}
+    .pop-post:last-child{border:none;padding-bottom:0}
+    .pop-num{font-family:var(--fh);font-size:20px;font-weight:900;color:var(--gold-border);width:24px;flex-shrink:0;line-height:1.2}
+    .pop-post h4{font-size:13px;font-weight:600;line-height:1.4;margin-bottom:3px}
+    .pop-post span{font-size:11px;color:rgba(232,238,246,0.3)}
+    .tag-cloud{display:flex;flex-wrap:wrap;gap:8px}
+    .tag-cloud a{padding:5px 14px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:20px;font-size:12px;color:var(--muted);transition:var(--tr)}
+    .tag-cloud a:hover{color:var(--gold);border-color:var(--gold-border)}
+    @media(max-width:1024px){.blog-layout{grid-template-columns:1fr}}
+    @media(max-width:600px){.brc-img{display:none}}
+  </style>
+</head>
+<body>
+<nav class="navbar" id="navbar">
+  <div class="nav-inner">
+    <a href="../index.html" class="logo"><span class="logo-icon">⬡</span>Research<span class="logo-gold">ium</span></a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="courses.html">Courses</a></li>
+      <li><a href="live.html">Live Classes</a></li>
+      <li><a href="blog.html" class="nav-active">Research Blog</a></li>
+      <li><a href="pricing.html">Pricing</a></li>
+      <li><a href="about.html">About</a></li>
+    </ul>
+    <div class="nav-actions">
+      <a href="login.html" class="btn-ghost">Sign In</a>
+      <a href="signup.html" class="btn-gold">Start Free →</a>
+    </div>
+    <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<div class="blog-hero">
+  <div class="sec-tag">RESEARCH BLOG</div>
+  <h1><span class="gold">Researchium</span> Knowledge Hub</h1>
+  <p>Expert guides, exam strategies, research insights & student success stories</p>
+  <div class="blog-tags-row">
+    <button class="blog-tag-btn active">All</button>
+    <button class="blog-tag-btn">JEE / NEET</button>
+    <button class="blog-tag-btn">UPSC</button>
+    <button class="blog-tag-btn">Coding</button>
+    <button class="blog-tag-btn">Research</button>
+    <button class="blog-tag-btn">Study Tips</button>
+    <button class="blog-tag-btn">Success Stories</button>
+    <button class="blog-tag-btn">Career</button>
+  </div>
+</div>
+
+<section class="section">
+  <div class="container">
+    <div class="blog-layout">
+      <div class="blog-list">
+        <a href="blog-post.html" class="blog-row-card">
+          <div class="brc-img" style="background:linear-gradient(135deg,#0d1f3c,#1a5a9a)">📖</div>
+          <div class="brc-body">
+            <div class="brc-cat">JEE Strategy</div>
+            <h3>How to Score 300+ in JEE Advanced 2025: The Researchium Blueprint</h3>
+            <p>A data-driven chapter-by-chapter strategy used by our AIR Top-100 students, with weekly targets, resource lists, and exam-day tactics.</p>
+            <div class="brc-meta"><span>📅 Mar 10, 2025</span><span>👤 Dr. Arjun Mehta</span><span>⏱ 8 min</span><span>👁 42K views</span></div>
+          </div>
+        </a>
+        <a href="blog-post.html" class="blog-row-card">
+          <div class="brc-img" style="background:linear-gradient(135deg,#1a0d2e,#5a2a8a)">💻</div>
+          <div class="brc-body">
+            <div class="brc-cat">Coding</div>
+            <h3>Cracking Google Interviews in 2025: The Complete DSA Checklist</h3>
+            <p>Riya Kapoor reveals the exact 50-topic DSA checklist that helped 14,000+ of her students land FAANG offers.</p>
+            <div class="brc-meta"><span>📅 Mar 8, 2025</span><span>👤 Riya Kapoor</span><span>⏱ 6 min</span><span>👁 38K views</span></div>
+          </div>
+        </a>
+        <a href="blog-post.html" class="blog-row-card">
+          <div class="brc-img" style="background:linear-gradient(135deg,#1f1500,#7a5a00)">🏛️</div>
+          <div class="brc-body">
+            <div class="brc-cat">UPSC</div>
+            <h3>UPSC Mains 2025: The Answer Writing Framework That Gets You Marks</h3>
+            <p>IAS Vikram Rao explains the structure, keywords, and time management strategy that examiners reward most.</p>
+            <div class="brc-meta"><span>📅 Mar 6, 2025</span><span>👤 Vikram Rao, IAS</span><span>⏱ 10 min</span><span>👁 29K views</span></div>
+          </div>
+        </a>
+        <a href="blog-post.html" class="blog-row-card">
+          <div class="brc-img" style="background:linear-gradient(135deg,#0d2a1a,#1a7a3a)">🧬</div>
+          <div class="brc-body">
+            <div class="brc-cat">NEET</div>
+            <h3>NEET 2025 Biology: 12 High-Yield Chapters You Cannot Afford to Skip</h3>
+            <p>Dr. Priya Nair's chapter-wise weightage analysis based on 10 years of NEET papers — guaranteed score booster.</p>
+            <div class="brc-meta"><span>📅 Mar 4, 2025</span><span>👤 Dr. Priya Nair</span><span>⏱ 7 min</span><span>👁 21K views</span></div>
+          </div>
+        </a>
+        <a href="blog-post.html" class="blog-row-card">
+          <div class="brc-img" style="background:linear-gradient(135deg,#1c0000,#7a1a1a)">🏆</div>
+          <div class="brc-body">
+            <div class="brc-cat">Success Story</div>
+            <h3>₹0 to ₹38 LPA: Vivek's Journey from Tier-3 College to Microsoft SDE-2</h3>
+            <p>Vivek Patel from Warangal shares his complete story — no CS degree, no coaching, just Researchium's DSA course and relentless practice.</p>
+            <div class="brc-meta"><span>📅 Mar 2, 2025</span><span>👤 Researchium Team</span><span>⏱ 5 min</span><span>👁 61K views</span></div>
+          </div>
+        </a>
+      </div>
+
+      <aside>
+        <div class="sidebar-widget">
+          <h3>Popular Posts</h3>
+          <div class="pop-post"><div class="pop-num">01</div><div><h4>Vivek's ₹38 LPA Microsoft Story</h4><span>61K views</span></div></div>
+          <div class="pop-post"><div class="pop-num">02</div><div><h4>JEE Advanced 300+ Blueprint</h4><span>42K views</span></div></div>
+          <div class="pop-post"><div class="pop-num">03</div><div><h4>Google DSA Interview Checklist</h4><span>38K views</span></div></div>
+          <div class="pop-post"><div class="pop-num">04</div><div><h4>UPSC Answer Writing Framework</h4><span>29K views</span></div></div>
+          <div class="pop-post"><div class="pop-num">05</div><div><h4>NEET Biology High-Yield Chapters</h4><span>21K views</span></div></div>
+        </div>
+        <div class="sidebar-widget">
+          <h3>Topics</h3>
+          <div class="tag-cloud">
+            <a href="#">JEE</a><a href="#">NEET</a><a href="#">UPSC</a><a href="#">DSA</a>
+            <a href="#">Python</a><a href="#">CAT</a><a href="#">Study Tips</a>
+            <a href="#">Career</a><a href="#">Research</a><a href="#">SSC</a>
+            <a href="#">Banking</a><a href="#">React</a><a href="#">Physics</a>
+          </div>
+        </div>
+        <div class="sidebar-widget" style="background:linear-gradient(135deg,var(--navy-4),var(--navy-3));border-color:var(--gold-border)">
+          <h3>🎓 Start Learning Free</h3>
+          <p style="font-size:13px;color:var(--muted);margin-bottom:16px">Join 4.8M+ students. First 7 days of Pro plan — completely free.</p>
+          <a href="signup.html" class="btn-gold btn-full-w">Create Free Account</a>
+        </div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer"><div class="footer-bottom"><p>© 2025 Researchium Learning Pvt. Ltd. · All rights reserved.</p></div></footer>
+<script src="../js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Live Classes – Researchium</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="../css/style.css"/>
+  <style>
+    .live-hero{padding:110px 28px 56px;text-align:center;background:var(--navy-2);border-bottom:1px solid rgba(239,68,68,0.08)}
+    .live-hero h1{font-family:var(--fh);font-size:clamp(30px,5vw,54px);font-weight:900;margin-bottom:12px}
+    .live-hero p{color:var(--muted);font-size:16px;margin-bottom:28px}
+    .sched-tabs{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-bottom:16px}
+    .sched-tab{padding:10px 22px;border-radius:50px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);font-size:13px;cursor:pointer;transition:var(--tr);color:var(--muted);font-family:var(--fb);font-weight:500}
+    .sched-tab:hover,.sched-tab.active{background:var(--gold);border-color:var(--gold);color:var(--navy);font-weight:700}
+    .live-section-title{font-family:var(--fh);font-size:22px;font-weight:700;margin-bottom:24px;display:flex;align-items:center;gap:12px}
+    .live-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-bottom:60px}
+    .live-full-card{background:var(--navy-3);border:1px solid rgba(255,255,255,0.07);border-radius:var(--r);overflow:hidden;transition:var(--tr)}
+    .live-full-card:hover{border-color:var(--gold-border);transform:translateY(-4px)}
+    .lfc-top{padding:16px 20px;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid rgba(255,255,255,0.04)}
+    .lfc-subject{font-size:11px;font-weight:700;color:var(--gold);background:var(--gold-dim);padding:3px 10px;border-radius:20px;letter-spacing:0.5px}
+    .lfc-live{font-size:11px;font-weight:700;color:#ef4444}
+    .lfc-upcoming{color:var(--sky)!important}
+    .lfc-body{padding:18px 20px 20px}
+    .lfc-body h3{font-family:var(--fh);font-size:16px;font-weight:700;margin-bottom:10px;line-height:1.4}
+    .lfc-edu{font-size:13px;color:var(--muted);margin-bottom:12px}
+    .lfc-viewers{font-size:12px;color:rgba(232,238,246,0.35);margin-bottom:16px}
+    @media(max-width:768px){.live-grid{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+<nav class="navbar" id="navbar">
+  <div class="nav-inner">
+    <a href="../index.html" class="logo"><span class="logo-icon">⬡</span>Research<span class="logo-gold">ium</span></a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="courses.html">Courses</a></li>
+      <li><a href="live.html" class="nav-active">Live Classes</a></li>
+      <li><a href="blog.html">Research Blog</a></li>
+      <li><a href="pricing.html">Pricing</a></li>
+      <li><a href="about.html">About</a></li>
+    </ul>
+    <div class="nav-actions">
+      <a href="login.html" class="btn-ghost">Sign In</a>
+      <a href="signup.html" class="btn-gold">Start Free →</a>
+    </div>
+    <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<div class="live-hero">
+  <div class="live-badge-pill" style="display:inline-block;margin-bottom:20px">🔴 Live Sessions Happening Now</div>
+  <h1>Learn Live with <span class="gold">India's Top Minds</span></h1>
+  <p>Interactive · Real-time doubts · Recorded replays · 1000s of co-learners</p>
+  <div class="sched-tabs">
+    <button class="sched-tab active">All Live</button>
+    <button class="sched-tab">JEE / NEET</button>
+    <button class="sched-tab">UPSC</button>
+    <button class="sched-tab">Coding</button>
+    <button class="sched-tab">Finance</button>
+    <button class="sched-tab">Today's Schedule</button>
+  </div>
+</div>
+
+<section class="section" style="padding-top:48px">
+  <div class="container">
+    <div class="live-section-title">🔴 Live Right Now</div>
+    <div class="live-grid">
+      <div class="live-full-card">
+        <div class="lfc-top"><div class="lfc-subject">Physics · JEE 2025</div><div class="lfc-live">🔴 LIVE</div></div>
+        <div class="lfc-body">
+          <h3>Wave Optics & Interference — Complete Chapter</h3>
+          <div class="lfc-edu">👨‍🏫 Dr. Arjun Mehta · IIT Delhi Alumni</div>
+          <div class="lfc-viewers">👁 2,831 students watching</div>
+          <a href="signup.html" class="btn-gold" style="display:block;text-align:center">Join Live Class</a>
+        </div>
+      </div>
+      <div class="live-full-card">
+        <div class="lfc-top"><div class="lfc-subject">Data Structures · Coding</div><div class="lfc-live">🔴 LIVE</div></div>
+        <div class="lfc-body">
+          <h3>Graph Algorithms: BFS, DFS & Dijkstra's Deep Dive</h3>
+          <div class="lfc-edu">👩‍💻 Riya Kapoor · Ex-Google Engineer</div>
+          <div class="lfc-viewers">👁 3,412 students watching</div>
+          <a href="signup.html" class="btn-gold" style="display:block;text-align:center">Join Live Class</a>
+        </div>
+      </div>
+      <div class="live-full-card">
+        <div class="lfc-top"><div class="lfc-subject">Chemistry · NEET 2025</div><div class="lfc-live">🔴 LIVE</div></div>
+        <div class="lfc-body">
+          <h3>Organic Chemistry — Aldehydes, Ketones & Reactions</h3>
+          <div class="lfc-edu">🧪 Dr. Priya Nair · AIIMS Delhi Alumni</div>
+          <div class="lfc-viewers">👁 1,964 students watching</div>
+          <a href="signup.html" class="btn-gold" style="display:block;text-align:center">Join Live Class</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="live-section-title">📅 Upcoming Today</div>
+    <div class="live-grid">
+      <div class="live-full-card">
+        <div class="lfc-top"><div class="lfc-subject">UPSC · Polity</div><div class="lfc-live lfc-upcoming">🕐 3:00 PM</div></div>
+        <div class="lfc-body">
+          <h3>Indian Constitution: Fundamental Rights & Directive Principles</h3>
+          <div class="lfc-edu">👨‍💼 Vikram Rao · IAS (Retd.)</div>
+          <div class="lfc-viewers">📋 1,420 registered</div>
+          <a href="signup.html" class="btn-outline-gold" style="display:block;text-align:center;padding:12px">Set Reminder</a>
+        </div>
+      </div>
+      <div class="live-full-card">
+        <div class="lfc-top"><div class="lfc-subject">Mathematics · JEE</div><div class="lfc-live lfc-upcoming">🕐 5:30 PM</div></div>
+        <div class="lfc-body">
+          <h3>Integral Calculus: Integration by Parts & Special Integrals</h3>
+          <div class="lfc-edu">📐 Sonal Mishra · IIT Madras Alumni</div>
+          <div class="lfc-viewers">📋 2,100 registered</div>
+          <a href="signup.html" class="btn-outline-gold" style="display:block;text-align:center;padding:12px">Set Reminder</a>
+        </div>
+      </div>
+      <div class="live-full-card">
+        <div class="lfc-top"><div class="lfc-subject">Web Dev · React</div><div class="lfc-live lfc-upcoming">🕐 7:00 PM</div></div>
+        <div class="lfc-body">
+          <h3>Build a Full-Stack App with React 18, Node.js & MongoDB</h3>
+          <div class="lfc-edu">💻 Arjun Dev · Senior SDE, Flipkart</div>
+          <div class="lfc-viewers">📋 3,860 registered</div>
+          <a href="signup.html" class="btn-outline-gold" style="display:block;text-align:center;padding:12px">Set Reminder</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer"><div class="footer-bottom"><p>© 2025 Researchium Learning Pvt. Ltd. · All rights reserved.</p></div></footer>
+<script src="../js/main.js"></script>
+</body>
+</html>

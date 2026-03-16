@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About Us – Researchium</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="../css/style.css"/>
+  <style>
+    .about-hero{padding:120px 28px 80px;max-width:760px;margin:0 auto;text-align:center}
+    .about-hero h1{font-family:var(--fh);font-size:clamp(32px,5vw,58px);font-weight:900;margin-bottom:20px;line-height:1.1}
+    .about-hero p{font-size:18px;color:var(--muted);line-height:1.8}
+    .mission-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;padding:80px 28px;max-width:1240px;margin:0 auto;background:var(--navy-2)}
+    .mission-text h2{font-family:var(--fh);font-size:clamp(24px,3.5vw,40px);font-weight:800;margin-bottom:20px}
+    .mission-text p{color:var(--muted);line-height:1.8;margin-bottom:16px;font-size:15px}
+    .impact-boxes{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+    .ib{background:var(--navy-3);border:1px solid rgba(201,168,76,0.1);border-radius:var(--r);padding:24px;text-align:center}
+    .ib strong{display:block;font-family:var(--fh);font-size:34px;font-weight:900;color:var(--gold);margin-bottom:4px}
+    .ib span{font-size:12px;color:var(--muted)}
+    .team-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+    .team-card{background:var(--navy-3);border:1px solid rgba(255,255,255,0.06);border-radius:var(--r);padding:28px 20px;text-align:center;transition:var(--tr)}
+    .team-card:hover{border-color:var(--gold-border);transform:translateY(-4px)}
+    .team-av{width:80px;height:80px;border-radius:50%;margin:0 auto 16px;display:flex;align-items:center;justify-content:center;font-family:var(--fh);font-size:24px;font-weight:700;border:2px solid var(--gold-border)}
+    .team-card h3{font-family:var(--fh);font-size:16px;font-weight:700;margin-bottom:4px}
+    .team-card .role{font-size:12px;color:var(--gold);font-weight:700;letter-spacing:0.5px;display:block;margin-bottom:10px}
+    .team-card p{font-size:13px;color:var(--muted);line-height:1.55}
+    @media(max-width:1024px){.mission-grid{grid-template-columns:1fr}.team-grid{grid-template-columns:1fr 1fr}}
+  </style>
+</head>
+<body>
+<nav class="navbar" id="navbar">
+  <div class="nav-inner">
+    <a href="../index.html" class="logo"><span class="logo-icon">⬡</span>Research<span class="logo-gold">ium</span></a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="courses.html">Courses</a></li>
+      <li><a href="live.html">Live Classes</a></li>
+      <li><a href="blog.html">Research Blog</a></li>
+      <li><a href="pricing.html">Pricing</a></li>
+      <li><a href="about.html" class="nav-active">About</a></li>
+    </ul>
+    <div class="nav-actions">
+      <a href="login.html" class="btn-ghost">Sign In</a>
+      <a href="signup.html" class="btn-gold">Start Free →</a>
+    </div>
+    <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<div class="about-hero">
+  <div class="sec-tag">OUR STORY</div>
+  <h1>Democratizing <span class="gold">Research-Grade</span> Education for Every Indian</h1>
+  <p>Founded by IIT and IIM alumni, Researchium was built on a simple belief: every student in India deserves access to the deepest, most rigorous education — regardless of geography or economic background.</p>
+</div>
+
+<div class="mission-grid">
+  <div class="mission-text">
+    <div class="sec-tag">OUR MISSION</div>
+    <h2>Learn Deeper. <span class="gold">Think Sharper.</span></h2>
+    <p>In 2021, Researchium was born in a small apartment in Hyderabad with one question: why should the quality of education depend on whether you live in Mumbai or Malkajgiri?</p>
+    <p>Today we serve students in every district of India — from Leh to Kanyakumari — delivering the same quality of instruction that used to only be available in premium coaching centres in metro cities.</p>
+    <p>We are not just an education platform. We are a research institution that teaches. Every course on Researchium is evidence-based, peer-reviewed by subject experts, and continuously updated based on student performance data.</p>
+  </div>
+  <div class="impact-boxes">
+    <div class="ib"><strong>4.8M+</strong><span>Students Taught</span></div>
+    <div class="ib"><strong>650+</strong><span>Expert Educators</span></div>
+    <div class="ib"><strong>3,200+</strong><span>Courses</span></div>
+    <div class="ib"><strong>98%</strong><span>Satisfaction Rate</span></div>
+  </div>
+</div>
+
+<section class="section">
+  <div class="container">
+    <div class="sec-header">
+      <div class="sec-tag">THE TEAM</div>
+      <h2>Built by <span class="gold">Educators & Engineers</span></h2>
+      <p>IIT, IIM, AIIMS alumni who left high-paying jobs to solve India's education problem</p>
+    </div>
+    <div class="team-grid">
+      <div class="team-card">
+        <div class="team-av" style="background:linear-gradient(135deg,#1a3a6a,#4fa8d6)">VK</div>
+        <h3>Vishal Kumar</h3>
+        <span class="role">Co-Founder & CEO</span>
+        <p>IIT Delhi, Ex-Google PM. Left a ₹2Cr role to build India's best edtech. Passionate about learning science.</p>
+      </div>
+      <div class="team-card">
+        <div class="team-av" style="background:linear-gradient(135deg,#3a1a3a,#9a4acf)">AJ</div>
+        <h3>Ananya Joshi</h3>
+        <span class="role">Co-Founder & CTO</span>
+        <p>IIT Bombay, Ex-Facebook Engineer. Architect of Researchium's AI adaptive learning engine and platform.</p>
+      </div>
+      <div class="team-card">
+        <div class="team-av" style="background:linear-gradient(135deg,#c9a84c,#f0d080);color:var(--navy)">RS</div>
+        <h3>Rohan Seth</h3>
+        <span class="role">Chief Academic Officer</span>
+        <p>IIM Ahmedabad. Designs and quality-controls all curriculum. Ensures every lesson meets research standards.</p>
+      </div>
+      <div class="team-card">
+        <div class="team-av" style="background:linear-gradient(135deg,#1a3a1a,#3a9a3a)">PM</div>
+        <h3>Prachi Mishra</h3>
+        <span class="role">VP, Educator Success</span>
+        <p>Harvard Graduate School of Education. Trains and supports all 650+ educators on the Researchium platform.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="app-sec">
+  <div class="container">
+    <div class="app-inner">
+      <div class="app-text">
+        <div class="sec-tag">JOIN THE MOVEMENT</div>
+        <h2>Be Part of India's <span class="gold">Learning Revolution</span></h2>
+        <p>4.8 million students can't be wrong. Join Researchium free today — no credit card, no commitments.</p>
+        <div style="display:flex;gap:14px;margin-top:28px;flex-wrap:wrap">
+          <a href="signup.html" class="btn-gold btn-lg">Create Free Account</a>
+          <a href="courses.html" class="btn-outline-gold btn-lg">Browse Courses</a>
+        </div>
+      </div>
+      <div class="app-badge-wrap"><div class="app-rating-badge"><div class="arb-score">4.9</div><div class="arb-stars">★★★★★</div><div class="arb-count">App Store Rating</div></div></div>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer"><div class="footer-bottom"><p>© 2025 Researchium Learning Pvt. Ltd. · All rights reserved.</p></div></footer>
+<script src="../js/main.js"></script>
+</body>
+</html>
